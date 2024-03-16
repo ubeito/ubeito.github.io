@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+    <title>PDAtoCFG</title>
+	<script type="text/javascript" src="PDAtoCFGjs.js"></script>
+</head>
+	<img src="pukiwiki.png" width="1.2%">
+	<b> Converter from PDA to CFG </b>	
+<br>
+    <input type="button" id="btn1" value="2. Download PDA gv file" onclick="clickBtn1()" disabled = "true" />
+    <input type="button" id="btn2" value="2. Convert PDA to CFG" onclick="clickBtn2()" disabled = "true" />
+    <input type="button" id="btn3" value="3. Download CFG json file" onclick="clickBtn3()" disabled = "true" />
+    <input type="button" id="btn4" value="3. Download CFG gv file" onclick="clickBtn4()" disabled = "true" />
+<span style="line-height:200%">
+<br>
+</span>
+	<textarea id="textarea4" value="1" cols="100" rows="50" readonly style="background-color:#99FFFF;"fontFamily = "Lucida Console"
+			ondragover="ondragoverHandler(event)" ondrop="onfilesdropHandler(event)">1. Drag a PDA matrix json file hear</textarea>
+<br>
+	* It is recommended to install <a href = "https://www.graphviz.org/resources/" target="_blank">a Graphviz file reviewer plugin</a> in your favorite editor.
+<br>
+	&nbsp; (Free online converters from GV to image file such as <a href = "https://convertio.co/ja/gv-png/" target="_blank">here</a> might not work well.)
+
+    <script type="text/javascript">
+	function ondragoverHandler(event) {
+		event.preventDefault();
+	}
+	let reader = new FileReader();
+	var fname = "";
+	function onfilesdropHandler(event){
+		event.stopPropagation(); 
+		event.preventDefault();
+		var files = event.dataTransfer.files;
+		reader.readAsText(files[0], 'UTF-8');
+		fname = files[0].name
+		reader.onload = function() {
+			document.getElementById('textarea4').value = PDAjsontoPDAmtx(reader.result);
+		};
+		btn1.disabled = false;
+		btn2.disabled = false;
+	}
+	function clickBtn1() {
+        var gvtext = toPDAgv(); // document.getElementById("text").value;
+        var gvfilename = fname.replace(/\.[^/.]+$/, "") + ".gv"; // "output.txt";
+//		console.log(gvfilename);
+		document.getElementById('textarea4').value += "PDA gv file created: " + gvfilename + "\n\n";
+        download(gvfilename, gvtext);
+	}
+	function clickBtn2() {
+        var tocfgtext = toCFGtxt();
+		document.getElementById('textarea4').value += tocfgtext;
+		btn3.disabled = false;
+		btn4.disabled = false;
+	}
+	function clickBtn3() {
+        var jstext = toCFGjson();
+        var jsfilename = fname.replace(/\.[^/.]+$/, "") + "_CFGed.json";
+		document.getElementById('textarea4').value += "CFG json file created: " + jsfilename + "\n\n";
+        download(jsfilename, jstext);
+		}
+	function clickBtn4() {
+        var gvtext = toCFGgv(reader.result);
+        var gvfilename = fname.replace(/\.[^/.]+$/, "") + "_CFGed.gv";
+		document.getElementById('textarea4').value += "CFG gv file created: " + gvfilename + "\n\n";
+        download(gvfilename, gvtext);
+		}
+
+    function download(filename, textInput) {
+		var element = document.createElement('a');
+		element.setAttribute('href','data:text/plain;charset=utf-8, ' + encodeURIComponent(textInput));
+		element.setAttribute('download', filename);
+		document.body.appendChild(element);
+		element.click(); // element.click() を使用して、マウスクリックをシミュレートします。
+		//document.body.removeChild(element);
+    }
+	</script>
+<body>
+</body>
+</html>
