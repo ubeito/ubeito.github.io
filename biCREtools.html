@@ -12,7 +12,7 @@
 		</label>
 	</p>
 	<input type="button" id="btn1" value="Get follow (& token) function" onclick="onclickBtn1()" /> 
-	<input type="button" id="btn7" value="Get decomposed expressions" onclick="onclickBtn7()" /> 
+	<input type="button" id="btn7" value="Show decomposed expressions" onclick="onclickBtn7()" /> 
 	<input type="button" id="btn2" value="Download position ε-automaton (gv)" onclick="onclickBtn2()" disabled = "true" />
 	<input type="button" id="btn5" value="Clear" onclick="onclickBtn5()" /> 
 	<p style="margin-top: 8px;margin-bottom: 8px;">
@@ -37,7 +37,6 @@
 	function onclickBtn6() {
 		sText.value = "";
 	}
-
 	function onclickBtn1() {
 		document.getElementById('textarea').value += getFollowstr(bicreText.value)
 		btn2.disabled = false;
@@ -52,7 +51,7 @@
 		var gvfname = "poseautodiag" + ".gv";
 		// document.getElementById('textarea').value += gvtext;
 		document.getElementById('textarea').value += "position ε-automaton file " + gvfname + " created.\n\n";
-        download(gvfname, gvtext);
+		download(gvfname, gvtext);
 	}
 	function onclickBtn3() {
 		document.getElementById('textarea').value += getRunresultstr(stringText.value)
@@ -60,14 +59,14 @@
 	function onclickBtn4() {
 		document.getElementById('textarea').value += getAllkindsstr()
 	}
-    function download(filename, textInput) {
+	function download(filename, textInput) {
 		var element = document.createElement('a');
 		element.setAttribute('href','data:text/plain;charset=utf-8, ' + encodeURIComponent(textInput));
 		element.setAttribute('download', filename);
 		document.body.appendChild(element);
 		element.click();
 		//document.body.removeChild(element);
-    }
+	}
 	</script>
 <body>
 </body>
