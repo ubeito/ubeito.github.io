@@ -6,12 +6,13 @@
 	<script src="biCREtoolsJS.js"></script>
 </head>
 <body>
-	<img src="pukiwiki.png" width="1.2%"> <b> Bilaterally Colored Regular Expression Engine Demo (ver.1) </b>	
+	<img src="pukiwiki.png" width="1.2%"> <b> Bilaterally Colored Regular Expression Engine Demo (ver.2) </b>	
 	<p style="margin-top: 8px;margin-bottom: 8px;">
 		<label>biCRE: <input type="text" id="bicreText" size="80" style="height:30px;font-size:large;background-color:#FFCCFF" >
 		</label>
 	</p>
 	<input type="button" id="btn1" value="Get follow (& token) function" onclick="onclickBtn1()" /> 
+	<input type="button" id="btn7" value="Get decomposed expressions" onclick="onclickBtn7()" /> 
 	<input type="button" id="btn2" value="Download position ε-automaton (gv)" onclick="onclickBtn2()" disabled = "true" />
 	<input type="button" id="btn5" value="Clear" onclick="onclickBtn5()" /> 
 	<p style="margin-top: 8px;margin-bottom: 8px;">
@@ -22,7 +23,7 @@
 	<input type="button" id="btn4" value="Show all kinds of acceptance" onclick="onclickBtn4()" disabled = "true" />
 	<input type="button" id="btn6" value="Clear" onclick="onclickBtn6()" /> 
 	<p style="margin-top: 8px;margin-bottom: 8px;">
-		<textarea id="textarea" value="1" cols="115" rows="50" readonly style="background-color:#99FFFF;"fontFamily = "Lucida Console"></textarea>
+		<textarea id="textarea" value="1" cols="100" rows="50" readonly style="background-color:#99FFFF; font-family:Courier New,Consolas,monospace;"></textarea>
 	</p>
 
 <script type="text/javascript">
@@ -43,6 +44,9 @@
 		btn3.disabled = false;
 		btn4.disabled = false;
 	}
+	function onclickBtn7() {
+		document.getElementById('textarea').value += getREstrs(bicreText.value)
+	}
 	function onclickBtn2() {
         var gvtext = getPoseautostr();
 		var gvfname = "poseautodiag" + ".gv";
@@ -61,7 +65,7 @@
 		element.setAttribute('href','data:text/plain;charset=utf-8, ' + encodeURIComponent(textInput));
 		element.setAttribute('download', filename);
 		document.body.appendChild(element);
-		element.click(); // element.click() を使用して、マウスクリックをシミュレートします。
+		element.click();
 		//document.body.removeChild(element);
     }
 	</script>
