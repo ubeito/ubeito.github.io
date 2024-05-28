@@ -8115,163 +8115,6 @@ F.line = 10;
 var token_436207633 = [initTable_637534271(32)];
 framePtr = F.prev;
 
-function addQuoted_889193723(s_889193725, s_889193725_Idx, x_889193726) {
-  var F = {procname: "addQuoted.addQuoted", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system.nim", line: 0};
-  framePtr = F;
-    F.line = 2927;
-    addInt_251658457(s_889193725, s_889193725_Idx, x_889193726);
-  framePtr = F.prev;
-
-  
-}
-
-function collectionToString_436207776(x_436207778, prefix_436207779, separator_436207780, suffix_436207781) {
-  var result_436207782 = [[]];
-
-  var F = {procname: "collectionToString.collectionToString", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system\\dollars.nim", line: 0};
-  framePtr = F;
-    F.line = 121;
-    result_436207782[0] = nimCopy(null, prefix_436207779, NTI33554439);
-    F.line = 122;
-    var firstElement_436207783 = true;
-    Label1: do {
-      F.line = 123;
-      var value_436207787 = 0;
-      F.line = 235;
-      var i_436207992 = 0;
-      F.line = 236;
-      var L_436207993 = (x_436207778).length;
-      Label2: do {
-        F.line = 237;
-          Label3: while (true) {
-          if (!(i_436207992 < L_436207993)) break Label3;
-            F.line = 123;
-            value_436207787 = x_436207778[i_436207992];
-            if (firstElement_436207783) {
-            F.line = 125;
-            firstElement_436207783 = false;
-            }
-            else {
-              F.line = 127;
-            result_436207782[0].push.apply(result_436207782[0], separator_436207780);;
-            }
-            
-            F.line = 123;
-            addQuoted_889193723(result_436207782, 0, value_436207787);
-            F.line = 239;
-            i_436207992 += 1;
-            if (!(((x_436207778).length == L_436207993))) {
-            F.line = 240;
-            failedAssertImpl_218103864(makeNimstrLit("C:\\nim-1.6.6\\lib\\system\\iterators.nim(240, 11) `len(a) == L` the length of the seq changed while iterating over it"));
-            }
-            
-          }
-      } while (false);
-    } while (false);
-    F.line = 137;
-    result_436207782[0].push.apply(result_436207782[0], suffix_436207781);;
-  framePtr = F.prev;
-
-  return result_436207782[0];
-
-}
-
-function HEX24_436207772(x_436207774) {
-  var result_436207775 = [];
-
-  var F = {procname: "$.$", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system\\dollars.nim", line: 0};
-  framePtr = F;
-    F.line = 148;
-    result_436207775 = nimCopy(null, collectionToString_436207776(x_436207774, makeNimstrLit("@["), makeNimstrLit(", "), makeNimstrLit("]")), NTI33554439);
-  framePtr = F.prev;
-
-  return result_436207775;
-
-}
-
-function addQuoted_436207766(s_436207768, s_436207768_Idx, x_436207769) {
-  var F = {procname: "addQuoted.addQuoted", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system.nim", line: 0};
-  framePtr = F;
-    F.line = 2933;
-    s_436207768[s_436207768_Idx].push.apply(s_436207768[s_436207768_Idx], HEX24_436207772(x_436207769));;
-  framePtr = F.prev;
-
-  
-}
-
-function HEX24_436207692(t_436207695) {
-  var result_436207696 = [[]];
-
-  var F = {procname: "$.$", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\pure\\collections\\tables.nim", line: 0};
-  framePtr = F;
-    if ((len_570425618(t_436207695) == 0)) {
-    F.line = 193;
-    result_436207696[0] = nimCopy(null, makeNimstrLit("{:}"), NTI33554439);
-    }
-    else {
-      F.line = 195;
-      result_436207696[0] = nimCopy(null, makeNimstrLit("{"), NTI33554439);
-      Label1: do {
-        F.line = 196;
-        var key_436207760 = 0;
-        F.line = 196;
-        var val_436207761 = [];
-        F.line = 694;
-        var L_436207985 = len_570425618(t_436207695);
-        Label2: do {
-          F.line = 695;
-          var h_436207987 = 0;
-          F.line = 75;
-          var colontmp__436207988 = 0;
-          F.line = 695;
-          colontmp__436207988 = (t_436207695.data).length - 1;
-          F.line = 90;
-          var res_436207989 = 0;
-          Label3: do {
-            F.line = 91;
-              Label4: while (true) {
-              if (!(res_436207989 <= colontmp__436207988)) break Label4;
-                F.line = 695;
-                h_436207987 = res_436207989;
-                if (isFilled_587202591(t_436207695.data[chckIndx(h_436207987, 0, (t_436207695.data).length - 1)].Field0)) {
-                F.line = 196;
-                key_436207760 = t_436207695.data[chckIndx(h_436207987, 0, (t_436207695.data).length - 1)].Field1;
-                F.line = 196;
-                val_436207761 = t_436207695.data[chckIndx(h_436207987, 0, (t_436207695.data).length - 1)].Field2;
-                if ((1 < (result_436207696[0]).length)) {
-                F.line = 197;
-                result_436207696[0].push.apply(result_436207696[0], makeNimstrLit(", "));;
-                }
-                
-                F.line = 196;
-                addQuoted_889193723(result_436207696, 0, key_436207760);
-                F.line = 196;
-                result_436207696[0].push.apply(result_436207696[0], makeNimstrLit(": "));;
-                F.line = 196;
-                addQuoted_436207766(result_436207696, 0, val_436207761);
-                if (!((len_570425618(t_436207695) == L_436207985))) {
-                F.line = 698;
-                failedAssertImpl_218103864(makeNimstrLit("C:\\nim-1.6.6\\lib\\pure\\collections\\tables.nim(698, 13) `len(t) == L` the length of the table changed while iterating over it"));
-                }
-                
-                }
-                
-                F.line = 93;
-                res_436207989 = addInt(res_436207989, 1);
-              }
-          } while (false);
-        } while (false);
-      } while (false);
-      F.line = 201;
-      result_436207696[0].push.apply(result_436207696[0], makeNimstrLit("}"));;
-    }
-    
-  framePtr = F.prev;
-
-  return result_436207696[0];
-
-}
-
 function len_1107296321(t_1107296324) {
   var result_1107296325 = 0;
 
@@ -8285,11 +8128,21 @@ function len_1107296321(t_1107296324) {
 
 }
 
-function addQuoted_436207951(s_436207953, s_436207953_Idx, x_436207954) {
+function addQuoted_889193723(s_889193725, s_889193725_Idx, x_889193726) {
+  var F = {procname: "addQuoted.addQuoted", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system.nim", line: 0};
+  framePtr = F;
+    F.line = 2927;
+    addInt_251658457(s_889193725, s_889193725_Idx, x_889193726);
+  framePtr = F.prev;
+
+  
+}
+
+function addQuoted_436207800(s_436207802, s_436207802_Idx, x_436207803) {
   var F = {procname: "addQuoted.addQuoted", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system.nim", line: 0};
   framePtr = F;
     F.line = 2933;
-    s_436207953[s_436207953_Idx].push.apply(s_436207953[s_436207953_Idx], reprEnum(x_436207954, NTI637534219));;
+    s_436207802[s_436207802_Idx].push.apply(s_436207802[s_436207802_Idx], reprEnum(x_436207803, NTI637534219));;
   framePtr = F.prev;
 
   
@@ -8464,15 +8317,15 @@ function addQuoted_1006633418(s_1006633420, s_1006633420_Idx, x_1006633421) {
       F.line = 2913;
       var c_1006633422 = 0;
       F.line = 253;
-      var i_436208007 = 0;
+      var i_436207992 = 0;
       F.line = 254;
-      var L_436208008 = (x_1006633421).length;
+      var L_436207993 = (x_1006633421).length;
       Label2: do {
         F.line = 255;
           Label3: while (true) {
-          if (!(i_436208007 < L_436208008)) break Label3;
+          if (!(i_436207992 < L_436207993)) break Label3;
             F.line = 2913;
-            c_1006633422 = x_1006633421[chckIndx(i_436208007, 0, (x_1006633421).length - 1)];
+            c_1006633422 = x_1006633421[chckIndx(i_436207992, 0, (x_1006633421).length - 1)];
             if ((c_1006633422 <= 127)) {
             F.line = 2917;
             addEscapedChar_33557860(s_1006633420, s_1006633420_Idx, c_1006633422);
@@ -8483,8 +8336,8 @@ function addQuoted_1006633418(s_1006633420, s_1006633420_Idx, x_1006633421) {
             }
             
             F.line = 257;
-            i_436208007 = addInt(i_436208007, 1);
-            if (!(((x_1006633421).length == L_436208008))) {
+            i_436207992 = addInt(i_436207992, 1);
+            if (!(((x_1006633421).length == L_436207993))) {
             F.line = 258;
             failedAssertImpl_218103864(makeNimstrLit("C:\\nim-1.6.6\\lib\\system\\iterators.nim(258, 11) `len(a) == L` the length of the string changed while iterating over it"));
             }
@@ -8499,82 +8352,229 @@ function addQuoted_1006633418(s_1006633420, s_1006633420_Idx, x_1006633421) {
   
 }
 
-function HEX24_436207928(x_436207930) {
-  var result_436207931 = [[]];
+function HEX24_436207777(x_436207779) {
+  var result_436207780 = [[]];
 
   var F = {procname: "$.$", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system\\dollars.nim", line: 0};
   framePtr = F;
     F.line = 97;
-    result_436207931[0] = nimCopy(null, makeNimstrLit("("), NTI33554439);
+    result_436207780[0] = nimCopy(null, makeNimstrLit("("), NTI33554439);
     F.line = 99;
-    var count_436207937 = 0;
-    if ((0 < count_436207937)) {
+    var count_436207786 = 0;
+    if ((0 < count_436207786)) {
     F.line = 101;
-    result_436207931[0].push.apply(result_436207931[0], makeNimstrLit(", "));;
+    result_436207780[0].push.apply(result_436207780[0], makeNimstrLit(", "));;
     }
     
     F.line = 105;
-    count_436207937 += 1;
+    count_436207786 += 1;
     F.line = 111;
-    addQuoted_436207951(result_436207931, 0, x_436207930["Field0"]);
-    if ((0 < count_436207937)) {
+    addQuoted_436207800(result_436207780, 0, x_436207779["Field0"]);
+    if ((0 < count_436207786)) {
     F.line = 101;
-    result_436207931[0].push.apply(result_436207931[0], makeNimstrLit(", "));;
+    result_436207780[0].push.apply(result_436207780[0], makeNimstrLit(", "));;
     }
     
     F.line = 105;
-    count_436207937 += 1;
+    count_436207786 += 1;
     F.line = 111;
-    addQuoted_1006633418(result_436207931, 0, x_436207930["Field1"]);
-    if ((count_436207937 == 1)) {
+    addQuoted_1006633418(result_436207780, 0, x_436207779["Field1"]);
+    if ((count_436207786 == 1)) {
     F.line = 116;
-    result_436207931[0].push.apply(result_436207931[0], makeNimstrLit(","));;
+    result_436207780[0].push.apply(result_436207780[0], makeNimstrLit(","));;
     }
     
     F.line = 117;
-    result_436207931[0].push.apply(result_436207931[0], makeNimstrLit(")"));;
+    result_436207780[0].push.apply(result_436207780[0], makeNimstrLit(")"));;
   framePtr = F.prev;
 
-  return result_436207931[0];
+  return result_436207780[0];
 
 }
 
-function addQuoted_436207922(s_436207924, s_436207924_Idx, x_436207925) {
+function addQuoted_436207771(s_436207773, s_436207773_Idx, x_436207774) {
   var F = {procname: "addQuoted.addQuoted", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system.nim", line: 0};
   framePtr = F;
     F.line = 2933;
-    s_436207924[s_436207924_Idx].push.apply(s_436207924[s_436207924_Idx], HEX24_436207928(x_436207925));;
+    s_436207773[s_436207773_Idx].push.apply(s_436207773[s_436207773_Idx], HEX24_436207777(x_436207774));;
   framePtr = F.prev;
 
   
 }
 
-function HEX24_436207848(t_436207851) {
-  var result_436207852 = [[]];
+function HEX24_436207697(t_436207700) {
+  var result_436207701 = [[]];
 
   var F = {procname: "$.$", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\pure\\collections\\tables.nim", line: 0};
   framePtr = F;
-    if ((len_1107296321(t_436207851) == 0)) {
+    if ((len_1107296321(t_436207700) == 0)) {
     F.line = 193;
-    result_436207852[0] = nimCopy(null, makeNimstrLit("{:}"), NTI33554439);
+    result_436207701[0] = nimCopy(null, makeNimstrLit("{:}"), NTI33554439);
     }
     else {
       F.line = 195;
-      result_436207852[0] = nimCopy(null, makeNimstrLit("{"), NTI33554439);
+      result_436207701[0] = nimCopy(null, makeNimstrLit("{"), NTI33554439);
       Label1: do {
         F.line = 196;
-        var key_436207916 = 0;
+        var key_436207765 = 0;
         F.line = 196;
-        var val_436207917 = {Field0: 0, Field1: []};
+        var val_436207766 = {Field0: 0, Field1: []};
         F.line = 694;
-        var L_436208000 = len_1107296321(t_436207851);
+        var L_436207985 = len_1107296321(t_436207700);
+        Label2: do {
+          F.line = 695;
+          var h_436207987 = 0;
+          F.line = 75;
+          var colontmp__436207988 = 0;
+          F.line = 695;
+          colontmp__436207988 = (t_436207700.data).length - 1;
+          F.line = 90;
+          var res_436207989 = 0;
+          Label3: do {
+            F.line = 91;
+              Label4: while (true) {
+              if (!(res_436207989 <= colontmp__436207988)) break Label4;
+                F.line = 695;
+                h_436207987 = res_436207989;
+                if (isFilled_587202591(t_436207700.data[chckIndx(h_436207987, 0, (t_436207700.data).length - 1)].Field0)) {
+                F.line = 196;
+                key_436207765 = t_436207700.data[chckIndx(h_436207987, 0, (t_436207700.data).length - 1)].Field1;
+                F.line = 196;
+                val_436207766 = nimCopy(val_436207766, t_436207700.data[chckIndx(h_436207987, 0, (t_436207700.data).length - 1)].Field2, NTI637534245);
+                if ((1 < (result_436207701[0]).length)) {
+                F.line = 197;
+                result_436207701[0].push.apply(result_436207701[0], makeNimstrLit(", "));;
+                }
+                
+                F.line = 196;
+                addQuoted_889193723(result_436207701, 0, key_436207765);
+                F.line = 196;
+                result_436207701[0].push.apply(result_436207701[0], makeNimstrLit(": "));;
+                F.line = 196;
+                addQuoted_436207771(result_436207701, 0, val_436207766);
+                if (!((len_1107296321(t_436207700) == L_436207985))) {
+                F.line = 698;
+                failedAssertImpl_218103864(makeNimstrLit("C:\\nim-1.6.6\\lib\\pure\\collections\\tables.nim(698, 13) `len(t) == L` the length of the table changed while iterating over it"));
+                }
+                
+                }
+                
+                F.line = 93;
+                res_436207989 = addInt(res_436207989, 1);
+              }
+          } while (false);
+        } while (false);
+      } while (false);
+      F.line = 201;
+      result_436207701[0].push.apply(result_436207701[0], makeNimstrLit("}"));;
+    }
+    
+  framePtr = F.prev;
+
+  return result_436207701[0];
+
+}
+
+function collectionToString_436207957(x_436207959, prefix_436207960, separator_436207961, suffix_436207962) {
+  var result_436207963 = [[]];
+
+  var F = {procname: "collectionToString.collectionToString", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system\\dollars.nim", line: 0};
+  framePtr = F;
+    F.line = 121;
+    result_436207963[0] = nimCopy(null, prefix_436207960, NTI33554439);
+    F.line = 122;
+    var firstElement_436207964 = true;
+    Label1: do {
+      F.line = 123;
+      var value_436207968 = 0;
+      F.line = 235;
+      var i_436208007 = 0;
+      F.line = 236;
+      var L_436208008 = (x_436207959).length;
+      Label2: do {
+        F.line = 237;
+          Label3: while (true) {
+          if (!(i_436208007 < L_436208008)) break Label3;
+            F.line = 123;
+            value_436207968 = x_436207959[i_436208007];
+            if (firstElement_436207964) {
+            F.line = 125;
+            firstElement_436207964 = false;
+            }
+            else {
+              F.line = 127;
+            result_436207963[0].push.apply(result_436207963[0], separator_436207961);;
+            }
+            
+            F.line = 123;
+            addQuoted_889193723(result_436207963, 0, value_436207968);
+            F.line = 239;
+            i_436208007 += 1;
+            if (!(((x_436207959).length == L_436208008))) {
+            F.line = 240;
+            failedAssertImpl_218103864(makeNimstrLit("C:\\nim-1.6.6\\lib\\system\\iterators.nim(240, 11) `len(a) == L` the length of the seq changed while iterating over it"));
+            }
+            
+          }
+      } while (false);
+    } while (false);
+    F.line = 137;
+    result_436207963[0].push.apply(result_436207963[0], suffix_436207962);;
+  framePtr = F.prev;
+
+  return result_436207963[0];
+
+}
+
+function HEX24_436207953(x_436207955) {
+  var result_436207956 = [];
+
+  var F = {procname: "$.$", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system\\dollars.nim", line: 0};
+  framePtr = F;
+    F.line = 148;
+    result_436207956 = nimCopy(null, collectionToString_436207957(x_436207955, makeNimstrLit("@["), makeNimstrLit(", "), makeNimstrLit("]")), NTI33554439);
+  framePtr = F.prev;
+
+  return result_436207956;
+
+}
+
+function addQuoted_436207947(s_436207949, s_436207949_Idx, x_436207950) {
+  var F = {procname: "addQuoted.addQuoted", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system.nim", line: 0};
+  framePtr = F;
+    F.line = 2933;
+    s_436207949[s_436207949_Idx].push.apply(s_436207949[s_436207949_Idx], HEX24_436207953(x_436207950));;
+  framePtr = F.prev;
+
+  
+}
+
+function HEX24_436207873(t_436207876) {
+  var result_436207877 = [[]];
+
+  var F = {procname: "$.$", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\pure\\collections\\tables.nim", line: 0};
+  framePtr = F;
+    if ((len_570425618(t_436207876) == 0)) {
+    F.line = 193;
+    result_436207877[0] = nimCopy(null, makeNimstrLit("{:}"), NTI33554439);
+    }
+    else {
+      F.line = 195;
+      result_436207877[0] = nimCopy(null, makeNimstrLit("{"), NTI33554439);
+      Label1: do {
+        F.line = 196;
+        var key_436207941 = 0;
+        F.line = 196;
+        var val_436207942 = [];
+        F.line = 694;
+        var L_436208000 = len_570425618(t_436207876);
         Label2: do {
           F.line = 695;
           var h_436208002 = 0;
           F.line = 75;
           var colontmp__436208003 = 0;
           F.line = 695;
-          colontmp__436208003 = (t_436207851.data).length - 1;
+          colontmp__436208003 = (t_436207876.data).length - 1;
           F.line = 90;
           var res_436208004 = 0;
           Label3: do {
@@ -8583,23 +8583,23 @@ function HEX24_436207848(t_436207851) {
               if (!(res_436208004 <= colontmp__436208003)) break Label4;
                 F.line = 695;
                 h_436208002 = res_436208004;
-                if (isFilled_587202591(t_436207851.data[chckIndx(h_436208002, 0, (t_436207851.data).length - 1)].Field0)) {
+                if (isFilled_587202591(t_436207876.data[chckIndx(h_436208002, 0, (t_436207876.data).length - 1)].Field0)) {
                 F.line = 196;
-                key_436207916 = t_436207851.data[chckIndx(h_436208002, 0, (t_436207851.data).length - 1)].Field1;
+                key_436207941 = t_436207876.data[chckIndx(h_436208002, 0, (t_436207876.data).length - 1)].Field1;
                 F.line = 196;
-                val_436207917 = nimCopy(val_436207917, t_436207851.data[chckIndx(h_436208002, 0, (t_436207851.data).length - 1)].Field2, NTI637534245);
-                if ((1 < (result_436207852[0]).length)) {
+                val_436207942 = t_436207876.data[chckIndx(h_436208002, 0, (t_436207876.data).length - 1)].Field2;
+                if ((1 < (result_436207877[0]).length)) {
                 F.line = 197;
-                result_436207852[0].push.apply(result_436207852[0], makeNimstrLit(", "));;
+                result_436207877[0].push.apply(result_436207877[0], makeNimstrLit(", "));;
                 }
                 
                 F.line = 196;
-                addQuoted_889193723(result_436207852, 0, key_436207916);
+                addQuoted_889193723(result_436207877, 0, key_436207941);
                 F.line = 196;
-                result_436207852[0].push.apply(result_436207852[0], makeNimstrLit(": "));;
+                result_436207877[0].push.apply(result_436207877[0], makeNimstrLit(": "));;
                 F.line = 196;
-                addQuoted_436207922(result_436207852, 0, val_436207917);
-                if (!((len_1107296321(t_436207851) == L_436208000))) {
+                addQuoted_436207947(result_436207877, 0, val_436207942);
+                if (!((len_570425618(t_436207876) == L_436208000))) {
                 F.line = 698;
                 failedAssertImpl_218103864(makeNimstrLit("C:\\nim-1.6.6\\lib\\pure\\collections\\tables.nim(698, 13) `len(t) == L` the length of the table changed while iterating over it"));
                 }
@@ -8613,12 +8613,12 @@ function HEX24_436207848(t_436207851) {
         } while (false);
       } while (false);
       F.line = 201;
-      result_436207852[0].push.apply(result_436207852[0], makeNimstrLit("}"));;
+      result_436207877[0].push.apply(result_436207877[0], makeNimstrLit("}"));;
     }
     
   framePtr = F.prev;
 
-  return result_436207852[0];
+  return result_436207877[0];
 
 }
 
@@ -8639,17 +8639,13 @@ function getFollowstr(ptt_436207635) {
     F.line = 15;
     token_436207633[0] = nimCopy(token_436207633[0], __436207638["Field1"], NTI637534251);
     F.line = 16;
-    fstr_436207637 = nimCopy(null, (makeNimstrLit("final follow = ") || []).concat(HEX24_436207692(follow_436207628[0]) || [],makeNimstrLit("\x0A") || []), NTI33554439);
-    F.line = 17;
-    fstr_436207637.push.apply(fstr_436207637, (makeNimstrLit("final token = ") || []).concat(HEX24_436207848(token_436207633[0]) || [],makeNimstrLit("\x0A") || []));;
-    F.line = 18;
-    fstr_436207637.push.apply(fstr_436207637, makeNimstrLit("regex string = "));;
+    fstr_436207637.push.apply(fstr_436207637, makeNimstrLit("regex = "));;
     Label1: do {
-      F.line = 19;
-      var i_436207975 = 0;
+      F.line = 17;
+      var i_436207643 = 0;
       F.line = 117;
       var colontmp__436207977 = 0;
-      F.line = 19;
+      F.line = 17;
       colontmp__436207977 = (ptt2_436207623[0]).length;
       F.line = 119;
       var i_436207978 = 0;
@@ -8657,18 +8653,24 @@ function getFollowstr(ptt_436207635) {
         F.line = 120;
           Label3: while (true) {
           if (!(i_436207978 < colontmp__436207977)) break Label3;
-            F.line = 19;
-            i_436207975 = i_436207978;
-            F.line = 19;
-            fstr_436207637.push.apply(fstr_436207637, (makeNimstrLit("\"") || []).concat([ptt2_436207623[0][chckIndx(i_436207975, 0, (ptt2_436207623[0]).length - 1)]],makeNimstrLit("\"[") || [],HEX24_318767107(i_436207975) || [],makeNimstrLit("] ") || []));;
+            F.line = 17;
+            i_436207643 = i_436207978;
+            F.line = 17;
+            fstr_436207637.push.apply(fstr_436207637, (makeNimstrLit("\"") || []).concat([ptt2_436207623[0][chckIndx(i_436207643, 0, (ptt2_436207623[0]).length - 1)]],makeNimstrLit("\"[") || [],HEX24_318767107(i_436207643) || [],makeNimstrLit("] ") || []));;
             F.line = 122;
             i_436207978 = addInt(i_436207978, 1);
           }
       } while (false);
     } while (false);
+    F.line = 19;
+    fstr_436207637.push.apply(fstr_436207637, makeNimstrLit("\x0A"));;
+    F.line = 20;
+    fstr_436207637.push.apply(fstr_436207637, (makeNimstrLit("token = ") || []).concat(HEX24_436207697(token_436207633[0]) || [],makeNimstrLit("\x0A") || []));;
     F.line = 21;
-    fstr_436207637.push.apply(fstr_436207637, makeNimstrLit("\x0A\x0A"));;
+    fstr_436207637.push.apply(fstr_436207637, (makeNimstrLit("follow = ") || []).concat(HEX24_436207873(follow_436207628[0]) || [],makeNimstrLit("\x0A") || []));;
     F.line = 22;
+    fstr_436207637.push.apply(fstr_436207637, makeNimstrLit("\x0A"));;
+    F.line = 23;
     result_436207636 = toJSStr(fstr_436207637);
     break BeforeRet;
   } while (false);
@@ -9293,7 +9295,7 @@ function getPoseautostr() {
 
   var F = {procname: "biCREtoolsJS.getPoseautostr", prev: framePtr, filename: "C:\\Users\\root.moti-PC.001\\Desktop\\biCREdesktop\\biCREthml\\biCREtoolsJS.nim", line: 0};
   framePtr = F;
-    F.line = 25;
+    F.line = 26;
     result_436208011 = toJSStr(biCREdotdiagram_1107296272(ptt2_436207623[0]));
   framePtr = F.prev;
 
@@ -10705,21 +10707,21 @@ function getRunresultstr(x_436208072) {
 
   var F = {procname: "biCREtoolsJS.getRunresultstr", prev: framePtr, filename: "C:\\Users\\root.moti-PC.001\\Desktop\\biCREdesktop\\biCREthml\\biCREtoolsJS.nim", line: 0};
   framePtr = F;
-    F.line = 28;
+    F.line = 29;
     var avaistates_436208074 = getavaistates_570425556(follow_436207628[0]);
-    F.line = 29;
-    var colontmp__436209598 = getinisetaccset_570426114(avaistates_436208074, token_436207633[0]);
-    F.line = 29;
-    var iniset_436208075 = nimCopy(null, colontmp__436209598["Field0"], NTI570425794);
-    F.line = 29;
-    var accset_436208076 = nimCopy(null, colontmp__436209598["Field1"], NTI570425795);
     F.line = 30;
-    var einitConfig_436208077 = geteinitConfig_570428797(avaistates_436208074, iniset_436208075, token_436207633[0], follow_436207628[0]);
+    var colontmp__436209598 = getinisetaccset_570426114(avaistates_436208074, token_436207633[0]);
+    F.line = 30;
+    var iniset_436208075 = nimCopy(null, colontmp__436209598["Field0"], NTI570425794);
+    F.line = 30;
+    var accset_436208076 = nimCopy(null, colontmp__436209598["Field1"], NTI570425795);
     F.line = 31;
-    var lastConfig_436208078 = runonfrom_570428990(cstrToNimstr(x_436208072), einitConfig_436208077, token_436207633[0], follow_436207628[0]);
+    var einitConfig_436208077 = geteinitConfig_570428797(avaistates_436208074, iniset_436208075, token_436207633[0], follow_436207628[0]);
     F.line = 32;
+    var lastConfig_436208078 = runonfrom_570428990(cstrToNimstr(x_436208072), einitConfig_436208077, token_436207633[0], follow_436207628[0]);
+    F.line = 33;
     Label1: do {
-      F.line = 32;
+      F.line = 33;
       F.line = 640;
       var resultHEX60gensym3_436208428 = newSeq_436208411(0);
       Label2: do {
@@ -10727,7 +10729,7 @@ function getRunresultstr(x_436208072) {
         var it_436208450 = {Field0: 0, Field1: []};
         F.line = 233;
         var colontmp__436209571 = [];
-        F.line = 32;
+        F.line = 33;
         F.line = 851;
         var resultHEX60gensym2_436208404 = [];
         Label3: do {
@@ -10814,9 +10816,9 @@ function getRunresultstr(x_436208072) {
             if (!(i_436209579 < L_436209580)) break Label14;
               F.line = 1014;
               it_436208663 = HEX3Atmp_436208635[chckIndx(i_436209579, 0, (HEX3Atmp_436208635).length - 1)];
-              F.line = 32;
+              F.line = 33;
               var colontmp__436209577 = nimCopy(null, it_436208663["Field1"], NTI570425910);
-              F.line = 32;
+              F.line = 33;
               var colontmp__436209578 = nimCopy(null, HEX5BHEX5D_436208537(token_436207633[0], it_436208663["Field0"])["Field1"], NTI33554439);
               F.line = 1015;
               resultHEX60gensym8_436208659[chckIndx(iHEX60gensym8_436208638, 0, (resultHEX60gensym8_436208659).length - 1)] = nimCopy(resultHEX60gensym8_436208659[chckIndx(iHEX60gensym8_436208638, 0, (resultHEX60gensym8_436208659).length - 1)], {Field0: nimCopy(null, colontmp__436209577, NTI570425910), Field1: nimCopy(null, colontmp__436209578, NTI33554439)}, NTI436208086);
@@ -10834,7 +10836,7 @@ function getRunresultstr(x_436208072) {
       } while (false);
     } while (false);
     var kinds_436208730 = toKinds_570430073(resultHEX60gensym8_436208659);
-    F.line = 33;
+    F.line = 34;
     Label15: do {
       F.line = 783;
       var iHEX60gensym17_436209454 = 0;
@@ -10882,7 +10884,7 @@ function getRunresultstr(x_436208072) {
       } while (false);
     } while (false);
     var kindsseq_436209525 = nimCopy(null, resultHEX60gensym17_436209516, NTI419430695);
-    F.line = 34;
+    F.line = 35;
     if (HEX3DHEX3D_570428208(kindsseq_436209525, [])) {
     Temporary20 = makeNimstrLit("None");
     }
@@ -10917,7 +10919,7 @@ function getRunresultstr(x_436208072) {
               var a_436209555 = nimCopy(null, resultHEX60gensym22_436209546, NTI33554439);
               F.line = 901;
               var b_436209556 = nimCopy(null, sHEX60gensym22_436209537[chckIndx(iHEX60gensym22_436209554, 0, (sHEX60gensym22_436209537).length - 1)], NTI33554439);
-              F.line = 34;
+              F.line = 35;
               resultHEX60gensym22_436209546 = nimCopy(null, (a_436209555 || []).concat(makeNimstrLit(", ") || [],b_436209556 || []), NTI33554439);
               F.line = 122;
               i_436209596 = addInt(i_436209596, 1);
@@ -10928,7 +10930,7 @@ function getRunresultstr(x_436208072) {
     }
     
     var kindsstr_436209557 = nimCopy(null, Temporary20, NTI33554439);
-    F.line = 35;
+    F.line = 36;
     result_436208073 = toJSStr((makeNimstrLit("accepting paths (from-to) = ") || []).concat(kindsstr_436209557 || [],makeNimstrLit("\x0A\x0A") || []));
   framePtr = F.prev;
 
@@ -11005,17 +11007,17 @@ function getAllkindsstr() {
 
   var F = {procname: "biCREtoolsJS.getAllkindsstr", prev: framePtr, filename: "C:\\Users\\root.moti-PC.001\\Desktop\\biCREdesktop\\biCREthml\\biCREtoolsJS.nim", line: 0};
   framePtr = F;
-    F.line = 39;
+    F.line = 40;
     var avaistates_436209689 = getavaistates_570425556(follow_436207628[0]);
-    F.line = 40;
-    var colontmp__436210034 = getinisetaccset_570426114(avaistates_436209689, token_436207633[0]);
-    F.line = 40;
-    var iniset_436209690 = nimCopy(null, colontmp__436210034["Field0"], NTI570425794);
-    F.line = 40;
-    var accset_436209691 = nimCopy(null, colontmp__436210034["Field1"], NTI570425795);
     F.line = 41;
+    var colontmp__436210034 = getinisetaccset_570426114(avaistates_436209689, token_436207633[0]);
+    F.line = 41;
+    var iniset_436209690 = nimCopy(null, colontmp__436210034["Field0"], NTI570425794);
+    F.line = 41;
+    var accset_436209691 = nimCopy(null, colontmp__436210034["Field1"], NTI570425795);
+    F.line = 42;
     Label1: do {
-      F.line = 41;
+      F.line = 42;
       var HEX3Atmp_436209915 = avaiKinds_570431535(iniset_436209690, accset_436209691, token_436207633[0]);
       F.line = 783;
       var iHEX60gensym30_436209918 = 0;
@@ -11063,7 +11065,7 @@ function getAllkindsstr() {
       } while (false);
     } while (false);
     var akindsseq_436209989 = nimCopy(null, resultHEX60gensym30_436209980, NTI419430695);
-    F.line = 42;
+    F.line = 43;
     if (HEX3DHEX3D_570428208(akindsseq_436209989, [])) {
     Temporary6 = makeNimstrLit("None");
     }
@@ -11098,7 +11100,7 @@ function getAllkindsstr() {
               var a_436210019 = nimCopy(null, resultHEX60gensym33_436210010, NTI33554439);
               F.line = 901;
               var b_436210020 = nimCopy(null, sHEX60gensym33_436210001[chckIndx(iHEX60gensym33_436210018, 0, (sHEX60gensym33_436210001).length - 1)], NTI33554439);
-              F.line = 42;
+              F.line = 43;
               resultHEX60gensym33_436210010 = nimCopy(null, (a_436210019 || []).concat(makeNimstrLit(", ") || [],b_436210020 || []), NTI33554439);
               F.line = 122;
               i_436210032 = addInt(i_436210032, 1);
@@ -11109,7 +11111,7 @@ function getAllkindsstr() {
     }
     
     var akindsstr_436210021 = nimCopy(null, Temporary6, NTI33554439);
-    F.line = 43;
+    F.line = 44;
     result_436209688 = toJSStr((makeNimstrLit("available (ini, acc) color pairs = ") || []).concat(akindsstr_436210021 || [],makeNimstrLit("\x0A\x0A") || []));
   framePtr = F.prev;
 
@@ -14327,35 +14329,36 @@ function toStr_1124073481(tokenseq_1124073482) {
 }
 
 function getREstrs(ptt_436210044) {
-            var Temporary4;
+    var Temporary1;
+            var Temporary5;
 
   var result_436210045 = null;
 
   var F = {procname: "biCREtoolsJS.getREstrs", prev: framePtr, filename: "C:\\Users\\root.moti-PC.001\\Desktop\\biCREdesktop\\biCREthml\\biCREtoolsJS.nim", line: 0};
   framePtr = F;
-    F.line = 46;
-    var tkseqs_436210046 = toREs_1124075122(cstrToNimstr(ptt_436210044));
     F.line = 47;
-    result_436210045 = "decomposed expressions = \n";
-    Label1: do {
-      F.line = 48;
+    var tkseqs_436210046 = toREs_1124075122(cstrToNimstr(ptt_436210044));
+    F.line = 48;
+    if (null != (Temporary1 = toJSStr((makeNimstrLit("decomposed expressions of \"") || []).concat(cstrToNimstr(ptt_436210044) || [],makeNimstrLit("\" =\x0A") || [])), Temporary1)) { if (null == result_436210045) result_436210045 = Temporary1; else result_436210045 += Temporary1; };
+    Label2: do {
+      F.line = 49;
       var i_436210052 = 0;
-      F.line = 48;
+      F.line = 49;
       var tks_436210053 = [];
       F.line = 168;
       var i_436210056 = 0;
       F.line = 169;
       var L_436210057 = (tkseqs_436210046).length;
-      Label2: do {
+      Label3: do {
         F.line = 170;
-          Label3: while (true) {
-          if (!(i_436210056 < L_436210057)) break Label3;
-            F.line = 48;
+          Label4: while (true) {
+          if (!(i_436210056 < L_436210057)) break Label4;
+            F.line = 49;
             i_436210052 = i_436210056;
-            F.line = 48;
+            F.line = 49;
             tks_436210053 = tkseqs_436210046[chckIndx(i_436210056, 0, (tkseqs_436210046).length - 1)];
-            F.line = 48;
-            if (null != (Temporary4 = toJSStr((HEX24_318767107(i_436210052) || []).concat(makeNimstrLit(": \"") || [],toStr_1124073481(tks_436210053) || [],makeNimstrLit("\"\x0A") || [])), Temporary4)) { if (null == result_436210045) result_436210045 = Temporary4; else result_436210045 += Temporary4; };
+            F.line = 49;
+            if (null != (Temporary5 = toJSStr((HEX24_318767107(i_436210052) || []).concat(makeNimstrLit(": \"") || [],toStr_1124073481(tks_436210053) || [],makeNimstrLit("\"\x0A") || [])), Temporary5)) { if (null == result_436210045) result_436210045 = Temporary5; else result_436210045 += Temporary5; };
             F.line = 172;
             i_436210056 = addInt(i_436210056, 1);
             if (!(((tkseqs_436210046).length == L_436210057))) {
@@ -14366,7 +14369,7 @@ function getREstrs(ptt_436210044) {
           }
       } while (false);
     } while (false);
-    F.line = 49;
+    F.line = 50;
     if (null != "\n") { if (null == result_436210045) result_436210045 = "\n"; else result_436210045 += "\n"; };
   framePtr = F.prev;
 
