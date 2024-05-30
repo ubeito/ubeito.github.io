@@ -2,14 +2,15 @@
 var framePtr = null;
 var excHandler = 0;
 var lastJSError = null;
-var NTI1124077157 = {size: 0, kind: 24, base: null, node: null, finalizer: null};
+var NTI1124077252 = {size: 0, kind: 24, base: null, node: null, finalizer: null};
 var NTI1124074255 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
 var NTI1124074254 = {size: 0, kind: 24, base: null, node: null, finalizer: null};
 var NTI1124074286 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
 var NTI1124074285 = {size: 0, kind: 24, base: null, node: null, finalizer: null};
+var NTI1124077168 = {size: 0, kind: 24, base: null, node: null, finalizer: null};
 var NTI1124074288 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
 var NTI1124074287 = {size: 0, kind: 24, base: null, node: null, finalizer: null};
-var NTI1124077168 = {size: 0, kind: 24, base: null, node: null, finalizer: null};
+var NTI1124077142 = {size: 0, kind: 24, base: null, node: null, finalizer: null};
 var NTI1124075840 = {size: 0, kind: 24, base: null, node: null, finalizer: null};
 var NTI1124076865 = {size: 0, kind: 24, base: null, node: null, finalizer: null};
 var NTI1124075474 = {size: 0, kind: 24, base: null, node: null, finalizer: null};
@@ -309,6 +310,7 @@ var NNI1124074288 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{
 {kind: 1, offset: "Field1", len: 0, typ: NTI33554439, name: "Field1", sons: null}]};
 NTI1124074288.node = NNI1124074288;
 NTI1124074287.base = NTI1124074288;
+NTI1124077142.base = NTI1124074287;
 NTI1124077168.base = NTI1124074287;
 var NNI1124074286 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "Field0", len: 0, typ: NTI637534219, name: "Field0", sons: null}, 
 {kind: 1, offset: "Field1", len: 0, typ: NTI33554439, name: "Field1", sons: null}]};
@@ -318,7 +320,7 @@ var NNI1124074255 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{
 {kind: 1, offset: "Field1", len: 0, typ: NTI33554439, name: "Field1", sons: null}]};
 NTI1124074255.node = NNI1124074255;
 NTI1124074254.base = NTI1124074255;
-NTI1124077157.base = NTI1124074287;
+NTI1124077252.base = NTI1124074287;
 
 function makeNimstrLit(c_33556801) {
       var result = [];
@@ -13168,6 +13170,162 @@ function findLSumop_1124074871(tkseq_1124074872, i0_1124074873) {
 
 }
 
+function newSeq_1124079130(len_1124079132) {
+  var result_1124079133 = [];
+
+  var F = {procname: "newSeq.newSeq", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system.nim", line: 0};
+  framePtr = F;
+    F.line = 680;
+    result_1124079133 = new Array(len_1124079132); for (var i = 0 ; i < len_1124079132 ; ++i) { result_1124079133[i] = []; }  framePtr = F.prev;
+
+  return result_1124079133;
+
+}
+
+function mergeAlt_1124079323(a_1124079325, b_1124079326, lo_1124079327, m_1124079328, hi_1124079329, cmp_1124079332, order_1124079333) {
+  var F = {procname: "mergeAlt.mergeAlt", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\pure\\algorithm.nim", line: 0};
+  framePtr = F;
+  BeforeRet: do {
+    if ((HEX2A_838860808(cmp_1124079332(a_1124079325[chckIndx(m_1124079328, 0, (a_1124079325).length - 1)], a_1124079325[chckIndx(addInt(m_1124079328, 1), 0, (a_1124079325).length - 1)]), order_1124079333) <= 0)) {
+    F.line = 331;
+    break BeforeRet;
+    }
+    
+    F.line = 332;
+    var j_1124079334 = lo_1124079327;
+    if (!((j_1124079334 <= m_1124079328))) {
+    F.line = 334;
+    failedAssertImpl_218103864(makeNimstrLit("C:\\nim-1.6.6\\lib\\pure\\algorithm.nim(334, 10) `j <= m` "));
+    }
+    
+    F.line = 336;
+    var bb_1124079340 = 0;
+    Label1: do {
+      F.line = 337;
+        Label2: while (true) {
+        if (!(j_1124079334 <= m_1124079328)) break Label2;
+          F.line = 338;
+          b_1124079326[chckIndx(bb_1124079340, 0, (b_1124079326).length - 1)] = a_1124079325[chckIndx(j_1124079334, 0, (a_1124079325).length - 1)];
+          F.line = 339;
+          bb_1124079340 = addInt(bb_1124079340, 1);
+          F.line = 340;
+          j_1124079334 = addInt(j_1124079334, 1);
+        }
+    } while (false);
+    F.line = 344;
+    var i_1124079349 = 0;
+    F.line = 345;
+    var k_1124079350 = lo_1124079327;
+    Label3: do {
+      F.line = 347;
+        Label4: while (true) {
+        if (!((k_1124079350 < j_1124079334) && (j_1124079334 <= hi_1124079329))) break Label4;
+          if ((HEX2A_838860808(cmp_1124079332(b_1124079326[chckIndx(i_1124079349, 0, (b_1124079326).length - 1)], a_1124079325[chckIndx(j_1124079334, 0, (a_1124079325).length - 1)]), order_1124079333) <= 0)) {
+          F.line = 349;
+          a_1124079325[chckIndx(k_1124079350, 0, (a_1124079325).length - 1)] = b_1124079326[chckIndx(i_1124079349, 0, (b_1124079326).length - 1)];
+          F.line = 350;
+          i_1124079349 = addInt(i_1124079349, 1);
+          }
+          else {
+            F.line = 352;
+            a_1124079325[chckIndx(k_1124079350, 0, (a_1124079325).length - 1)] = a_1124079325[chckIndx(j_1124079334, 0, (a_1124079325).length - 1)];
+            F.line = 353;
+            j_1124079334 = addInt(j_1124079334, 1);
+          }
+          
+          F.line = 354;
+          k_1124079350 = addInt(k_1124079350, 1);
+        }
+    } while (false);
+    Label5: do {
+      F.line = 357;
+        Label6: while (true) {
+        if (!(k_1124079350 < j_1124079334)) break Label6;
+          F.line = 358;
+          a_1124079325[chckIndx(k_1124079350, 0, (a_1124079325).length - 1)] = b_1124079326[chckIndx(i_1124079349, 0, (b_1124079326).length - 1)];
+          F.line = 359;
+          k_1124079350 = addInt(k_1124079350, 1);
+          F.line = 360;
+          i_1124079349 = addInt(i_1124079349, 1);
+        }
+    } while (false);
+  } while (false);
+  framePtr = F.prev;
+
+  
+}
+
+function sort_1124079306(a_1124079308, cmp_1124079311, order_1124079312) {
+  var F = {procname: "sort.sort", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\pure\\algorithm.nim", line: 0};
+  framePtr = F;
+    F.line = 407;
+    var n_1124079316 = (a_1124079308).length;
+    F.line = 408;
+    var b_1124079320 = newSeq_1124079130(chckRange(divInt(n_1124079316, 2), 0, 2147483647));
+    F.line = 409;
+    var s_1124079321 = 1;
+    Label1: do {
+      F.line = 410;
+        Label2: while (true) {
+        if (!(s_1124079321 < n_1124079316)) break Label2;
+          F.line = 411;
+          var m_1124079322 = subInt(subInt(n_1124079316, 1), s_1124079321);
+          Label3: do {
+            F.line = 412;
+              Label4: while (true) {
+              if (!(0 <= m_1124079322)) break Label4;
+                F.line = 413;
+                mergeAlt_1124079323(a_1124079308, b_1124079320, nimMax(addInt(subInt(m_1124079322, s_1124079321), 1), 0), m_1124079322, addInt(m_1124079322, s_1124079321), cmp_1124079311, order_1124079312);
+                F.line = 414;
+                m_1124079322 = subInt(m_1124079322, mulInt(s_1124079321, 2));
+              }
+          } while (false);
+          F.line = 415;
+          s_1124079321 = mulInt(s_1124079321, 2);
+        }
+    } while (false);
+  framePtr = F.prev;
+
+  
+}
+
+function sorted_1124079284(a_1124079286, cmp_1124079289, order_1124079290) {
+  var result_1124079291 = [];
+
+  var F = {procname: "sorted.sorted", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\pure\\algorithm.nim", line: 0};
+  framePtr = F;
+    F.line = 444;
+    result_1124079291 = nimCopy(null, newSeq_1124079130(chckRange((a_1124079286).length, 0, 2147483647)), NTI1124077142);
+    Label1: do {
+      F.line = 445;
+      var i_1124079305 = 0;
+      F.line = 75;
+      var colontmp__436210246 = 0;
+      F.line = 445;
+      colontmp__436210246 = (a_1124079286).length - 1;
+      F.line = 90;
+      var res_436210247 = 0;
+      Label2: do {
+        F.line = 91;
+          Label3: while (true) {
+          if (!(res_436210247 <= colontmp__436210246)) break Label3;
+            F.line = 445;
+            i_1124079305 = res_436210247;
+            F.line = 445;
+            result_1124079291[chckIndx(i_1124079305, 0, (result_1124079291).length - 1)] = nimCopy(null, a_1124079286[chckIndx(i_1124079305, 0, (a_1124079286).length - 1)], NTI1124074287);
+            F.line = 93;
+            res_436210247 = addInt(res_436210247, 1);
+          }
+      } while (false);
+    } while (false);
+    F.line = 447;
+    sort_1124079306(result_1124079291, cmp_1124079289, order_1124079290);
+  framePtr = F.prev;
+
+  return result_1124079291;
+
+}
+
 function find_1124079198(a_1124079201, item_1124079202) {
   var result_1124079203 = 0;
 
@@ -13180,13 +13338,13 @@ function find_1124079198(a_1124079201, item_1124079202) {
       F.line = 1838;
       var i_1124079207 = [];
       F.line = 8;
-      var i_436210254 = 0;
+      var i_436210263 = 0;
       Label2: do {
         F.line = 9;
           Label3: while (true) {
-          if (!(i_436210254 < (a_1124079201).length)) break Label3;
+          if (!(i_436210263 < (a_1124079201).length)) break Label3;
             F.line = 1838;
-            i_1124079207 = a_1124079201[chckIndx(i_436210254, 0, (a_1124079201).length - 1)];
+            i_1124079207 = a_1124079201[chckIndx(i_436210263, 0, (a_1124079201).length - 1)];
             if (HEX3DHEX3D_1124078760(i_1124079207, item_1124079202)) {
             F.line = 1839;
             break BeforeRet;
@@ -13195,7 +13353,7 @@ function find_1124079198(a_1124079201, item_1124079202) {
             F.line = 1838;
             result_1124079203 = addInt(result_1124079203, 1);
             F.line = 11;
-            i_436210254 = addInt(i_436210254, 1);
+            i_436210263 = addInt(i_436210263, 1);
           }
       } while (false);
     } while (false);
@@ -13242,17 +13400,17 @@ function deduplicate_1124079147(s_1124079149, isSorted_1124079150) {
       F.line = 205;
       var i_1124079172 = 0;
       F.line = 75;
-      var colontmp__436210246 = 0;
+      var colontmp__436210255 = 0;
       F.line = 205;
-      colontmp__436210246 = (s_1124079149).length - 1;
+      colontmp__436210255 = (s_1124079149).length - 1;
       F.line = 90;
-      var res_436210247 = 1;
+      var res_436210256 = 1;
       Label3: do {
         F.line = 91;
           Label4: while (true) {
-          if (!(res_436210247 <= colontmp__436210246)) break Label4;
+          if (!(res_436210256 <= colontmp__436210255)) break Label4;
             F.line = 205;
-            i_1124079172 = res_436210247;
+            i_1124079172 = res_436210256;
             if (!(HEX3DHEX3D_1124078760(s_1124079149[chckIndx(i_1124079172, 0, (s_1124079149).length - 1)], prev_1124079160))) {
             F.line = 207;
             prev_1124079160 = nimCopy(null, s_1124079149[chckIndx(i_1124079172, 0, (s_1124079149).length - 1)], NTI1124074287);
@@ -13262,7 +13420,7 @@ function deduplicate_1124079147(s_1124079149, isSorted_1124079150) {
             }
             
             F.line = 93;
-            res_436210247 = addInt(res_436210247, 1);
+            res_436210256 = addInt(res_436210256, 1);
           }
       } while (false);
     } while (false);
@@ -13272,13 +13430,13 @@ function deduplicate_1124079147(s_1124079149, isSorted_1124079150) {
         F.line = 210;
         var itm_1124079192 = [];
         F.line = 8;
-        var i_436210251 = 0;
+        var i_436210260 = 0;
         Label7: do {
           F.line = 9;
             Label8: while (true) {
-            if (!(i_436210251 < (s_1124079149).length)) break Label8;
+            if (!(i_436210260 < (s_1124079149).length)) break Label8;
               F.line = 210;
-              itm_1124079192 = s_1124079149[chckIndx(i_436210251, 0, (s_1124079149).length - 1)];
+              itm_1124079192 = s_1124079149[chckIndx(i_436210260, 0, (s_1124079149).length - 1)];
               if (!(contains_1124079193(result_1124079151, itm_1124079192))) {
               F.line = 211;
               var Temporary9 = nimCopy(null, itm_1124079192, NTI1124074287);
@@ -13286,7 +13444,7 @@ function deduplicate_1124079147(s_1124079149, isSorted_1124079150) {
               }
               
               F.line = 11;
-              i_436210251 = addInt(i_436210251, 1);
+              i_436210260 = addInt(i_436210260, 1);
             }
         } while (false);
       } while (false);
@@ -13297,18 +13455,6 @@ function deduplicate_1124079147(s_1124079149, isSorted_1124079150) {
   framePtr = F.prev;
 
   return result_1124079151;
-
-}
-
-function newSeq_1124079130(len_1124079132) {
-  var result_1124079133 = [];
-
-  var F = {procname: "newSeq.newSeq", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system.nim", line: 0};
-  framePtr = F;
-    F.line = 680;
-    result_1124079133 = new Array(len_1124079132); for (var i = 0 ; i < len_1124079132 ; ++i) { result_1124079133[i] = []; }  framePtr = F.prev;
-
-  return result_1124079133;
 
 }
 
@@ -13486,6 +13632,78 @@ function simplifyEmpStr_1124074893(tkseq0_1124074894) {
 
 }
 
+function HEX3C_1124079259(x_1124079261, y_1124079262) {
+  var result_1124079263 = false;
+
+  var F = {procname: "<.<", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system.nim", line: 0};
+  framePtr = F;
+  BeforeRet: do {
+    F.line = 1894;
+    var c_1124079269 = cmp_33555863(x_1124079261["Field0"], y_1124079262["Field0"]);
+    if ((c_1124079269 < 0)) {
+    F.line = 1895;
+    result_1124079263 = true;
+    break BeforeRet;
+    }
+    
+    if ((0 < c_1124079269)) {
+    F.line = 1896;
+    result_1124079263 = false;
+    break BeforeRet;
+    }
+    
+    F.line = 1894;
+    var c_1124079270 = cmp_33555863(x_1124079261["Field1"], y_1124079262["Field1"]);
+    if ((c_1124079270 < 0)) {
+    F.line = 1895;
+    result_1124079263 = true;
+    break BeforeRet;
+    }
+    
+    if ((0 < c_1124079270)) {
+    F.line = 1896;
+    result_1124079263 = false;
+    break BeforeRet;
+    }
+    
+    F.line = 1897;
+    result_1124079263 = false;
+    break BeforeRet;
+  } while (false);
+  framePtr = F.prev;
+
+  return result_1124079263;
+
+}
+
+function cmp_1124079250(x_1124079252, y_1124079253) {
+  var result_1124079254 = 0;
+
+  var F = {procname: "cmp.cmp", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\system.nim", line: 0};
+  framePtr = F;
+  BeforeRet: do {
+    if (HEX3DHEX3D_1124074969(x_1124079252, y_1124079253)) {
+    F.line = 957;
+    result_1124079254 = 0;
+    break BeforeRet;
+    }
+    
+    if (HEX3C_1124079259(x_1124079252, y_1124079253)) {
+    F.line = 958;
+    result_1124079254 = -1;
+    break BeforeRet;
+    }
+    
+    F.line = 959;
+    result_1124079254 = 1;
+    break BeforeRet;
+  } while (false);
+  framePtr = F.prev;
+
+  return result_1124079254;
+
+}
+
 function toREs_1124075122(ptt0_1124075123) {
                       var Temporary7;
                       var Temporary8;
@@ -13511,6 +13729,27 @@ function HEX3Aanonymous_1124077354(it_1124077355) {
                   var Temporary57;
                     var Temporary58;
                     var Temporary59;
+    
+function HEX3Aanonymous_1124079234(xHEX60gensym155_1124079238, yHEX60gensym155_1124079239) {
+      var result_1124079240 = 0;
+
+      var F = {procname: "toREs.:anonymous", prev: framePtr, filename: "C:\\nim-1.6.6\\lib\\pure\\algorithm.nim", line: 0};
+      framePtr = F;
+        F.line = 496;
+        var it_1124079241 = nimCopy(null, xHEX60gensym155_1124079238, NTI1124074348);
+        F.line = 497;
+        var aHEX60gensym155_1124079245 = {Field0: nimCopy(null, it_1124079241[chckIndx(0, 0, (it_1124079241).length - 1)]["Field1"], NTI33554439), Field1: nimCopy(null, it_1124079241[chckIndx((it_1124079241).length - 1, 0, (it_1124079241).length - 1)]["Field1"], NTI33554439)};
+        F.line = 498;
+        it_1124079241 = nimCopy(null, yHEX60gensym155_1124079239, NTI1124074348);
+        F.line = 499;
+        var bHEX60gensym155_1124079249 = {Field0: nimCopy(null, it_1124079241[chckIndx(0, 0, (it_1124079241).length - 1)]["Field1"], NTI33554439), Field1: nimCopy(null, it_1124079241[chckIndx((it_1124079241).length - 1, 0, (it_1124079241).length - 1)]["Field1"], NTI33554439)};
+        F.line = 500;
+        result_1124079240 = cmp_1124079250(aHEX60gensym155_1124079245, bHEX60gensym155_1124079249);
+      framePtr = F.prev;
+
+      return result_1124079240;
+
+    }
 
   var result_1124075124 = [];
 
@@ -14193,6 +14432,7 @@ function HEX3Aanonymous_1124077354(it_1124077355) {
       } while (false);
     } while (false);
     F.line = 190;
+    F.line = 495;
     Label69: do {
       F.line = 1012;
       var iHEX60gensym152_1124079126 = 0;
@@ -14226,7 +14466,8 @@ function HEX3Aanonymous_1124077354(it_1124077355) {
         } while (false);
       } while (false);
     } while (false);
-    result_1124075124 = nimCopy(null, deduplicate_1124079147(resultHEX60gensym152_1124079138, false), NTI1124077157);
+    var resultHEX60gensym155_1124079384 = sorted_1124079284(deduplicate_1124079147(resultHEX60gensym152_1124079138, false), HEX3Aanonymous_1124079234, 1);
+    result_1124075124 = nimCopy(null, resultHEX60gensym155_1124079384, NTI1124077252);
     break BeforeRet;
   } while (false);
   framePtr = F.prev;
@@ -14252,17 +14493,17 @@ function toStr_1124073481(tokenseq_1124073482) {
       F.line = 11;
       var tkstr_1124073507 = [];
       F.line = 235;
-      var i_436210267 = 0;
+      var i_436210276 = 0;
       F.line = 236;
-      var L_436210268 = (tokenseq_1124073482).length;
+      var L_436210277 = (tokenseq_1124073482).length;
       Label2: do {
         F.line = 237;
           Label3: while (true) {
-          if (!(i_436210267 < L_436210268)) break Label3;
+          if (!(i_436210276 < L_436210277)) break Label3;
             F.line = 11;
-            tkind_1124073506 = tokenseq_1124073482[chckIndx(i_436210267, 0, (tokenseq_1124073482).length - 1)]["Field0"];
+            tkind_1124073506 = tokenseq_1124073482[chckIndx(i_436210276, 0, (tokenseq_1124073482).length - 1)]["Field0"];
             F.line = 11;
-            tkstr_1124073507 = tokenseq_1124073482[chckIndx(i_436210267, 0, (tokenseq_1124073482).length - 1)]["Field1"];
+            tkstr_1124073507 = tokenseq_1124073482[chckIndx(i_436210276, 0, (tokenseq_1124073482).length - 1)]["Field1"];
             F.line = 11;
             switch (tkind_1124073506) {
             case 0:
@@ -14309,8 +14550,8 @@ function toStr_1124073481(tokenseq_1124073482) {
               break;
             }
             F.line = 239;
-            i_436210267 = addInt(i_436210267, 1);
-            if (!(((tokenseq_1124073482).length == L_436210268))) {
+            i_436210276 = addInt(i_436210276, 1);
+            if (!(((tokenseq_1124073482).length == L_436210277))) {
             F.line = 240;
             failedAssertImpl_218103864(makeNimstrLit("C:\\nim-1.6.6\\lib\\system\\iterators.nim(240, 11) `len(a) == L` the length of the seq changed while iterating over it"));
             }
